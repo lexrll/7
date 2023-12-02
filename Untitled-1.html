@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>生日快乐</title>
+    <style>
+        /* 设置整个页面的背景图 */
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-image: url("7.PNG"); /* 设置背景图片 */
+            background-size: cover; /* 背景图片覆盖整个页面 */
+            background-position: center; /* 背景图片居中显示 */
+            background-repeat: no-repeat; /* 背景图片不重复 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* 隐藏所有内容，直到“开始”按钮被点击 */
+        .hidden {
+            display: none;
+        }
+
+        /* 设置整个页面的布局样式 */
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #f0e4d7;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* 设置启动界面的按钮样式 */
+        #startButton {
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-bottom: 20px; /* 添加间距，使按钮和内容有些距离 */
+        }
+
+        /* 设置音乐和图片的样式 */
+        #birthdayContent img {
+            max-width: 90%; /* 控制图片最大宽度，根据需要调整 */
+            height: auto;
+            margin-bottom: 20px; /* 在图片和文本之间添加一些空间 */
+        }
+
+        /* 设置生日祝福语的样式 */
+        .birthday-message {
+            font-size: 24px;
+            color: #333;
+            text-align: center; /* 确保文本居中 */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- “开始”按钮 -->
+    <button id="startButton">开始庆祝</button>
+
+    <!-- 生日祝福内容，初始时隐藏 -->
+    <div id="birthdayContent" class="hidden">
+        <!-- 生日图片 -->
+        <img src="image.jpg" alt="生日图片" />
+
+        <!-- 生日祝福语 -->
+        <div class="birthday-message">
+            祝你生日快乐，愿你的每一天都充满阳光和快乐！
+        </div>
+
+        <!-- 生日音乐 -->
+        <audio id="birthdayMusic" loop>
+            <source src="6(1).mp3" type="audio/mpeg">
+            您的浏览器不支持 audio 标签。
+        </audio>
+    </div>
+
+    <script>
+        // 当点击“开始”按钮时，显示生日祝福内容并播放音乐
+        document.getElementById('startButton').addEventListener('click', function() {
+            // 隐藏“开始”按钮
+            this.style.display = 'none';
+
+            // 显示生日内容并播放音乐
+            var content = document.getElementById('birthdayContent');
+            var music = document.getElementById('birthdayMusic');
+            content.classList.remove('hidden');
+            music.play();
+        });
+    </script>
+
+</body>
+</html>
